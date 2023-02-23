@@ -4,14 +4,15 @@
 
 ### Getting started
 
-1. Clone repoitory via `git clone https://github.com/AidXylelele/labs.git`
-2. Change your dirctory to lab1 via: `cd lab1`
-3. Install TypeScript Globally via `npm install -g typescript`
-4. Run `npm i`
-5. Build all TypeScript files via `npm run build`
-6. Run app via `npm run interactive` or `npm run none-interactive`
+1. Clone repoitory via ```git clone https://github.com/AidXylelele/labs.git```
+2. Install TypeScript Globally via ```npm install -g typescript```
+3. Install node_modules in folder ```labs``` via ```npm i```
+4. Change your dirctory to lab1 via: ```cd lab1```
+5. Build all TypeScript files via ```npm run build```
+6. Run app via ```npm run interactive``` or ```npm run none-interactive```
+7. Run ```npm run clean``` to delete build files
 
-> **Note** Data in non-interactive mode is stored in .txt file `values.txt` in format `1\s0\s0\n`
+> **Note** Data in non-interactive mode is stored in .txt file ```values.txt``` in format ```1\s0\s0\n```
 
 ### Git revert
 

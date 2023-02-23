@@ -1,3 +1,4 @@
 node_modules
 package-lock.json
-lab1/values.txt
+lab1/dist/*
+
