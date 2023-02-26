@@ -1,9 +1,9 @@
+import { MathOperations } from './common/math.utils';
 const fs = require('fs');
-import { IConfiguration } from './lab1.types';
-import { MathOperations } from './math.utils';
 
-class NonInteractiveApp extends MathOperations {
-  constructor(private FILE_NAME: string) {
+export class NonInteractiveApp extends MathOperations {
+  private FILE_NAME: string;
+  constructor() {
     super();
   }
   getContent = () => {
@@ -25,11 +25,11 @@ class NonInteractiveApp extends MathOperations {
       this.values[field] = value;
     }
   };
-  start = async () => {
+  start = async (file: string) => {
+    this.FILE_NAME = file;
     this.setValues();
     this.calculate();
   };
 }
 
-const app = new NonInteractiveApp('values.txt');
-app.start()
+export const nonInteractiveApp = new NonInteractiveApp();

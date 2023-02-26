@@ -1,4 +1,5 @@
-import { IValues } from './lab1.types';
+import { IValues } from "./lab1.types";
+
 
 export class MathOperations {
   values: IValues = {

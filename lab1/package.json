@@ -2,7 +2,6 @@
   "scripts": {
     "build": "tsc --build",
     "clean": "tsc --build --clean",
-    "interactive": "node ./dist/interactive.js",
-    "non-interactive": "node ./dist/non-interactive.js"
+    "start": "node ./dist/main.js"
   }
 }

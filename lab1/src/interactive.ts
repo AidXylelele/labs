@@ -1,6 +1,6 @@
 import { createInterface } from 'readline';
-import { IConfiguration } from './lab1.types';
-import { MathOperations } from './math.utils';
+import { IConfiguration } from './common/lab1.types';
+import { MathOperations } from './common/math.utils';
 
 class InteractiveApp extends MathOperations {
   constructor() {
@@ -38,5 +38,4 @@ class InteractiveApp extends MathOperations {
   };
 }
 
-const app = new InteractiveApp();
-app.start();
+export const interactiveApp = new InteractiveApp();
