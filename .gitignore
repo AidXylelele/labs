@@ -1,4 +1,6 @@
 node_modules
 package-lock.json
 lab1/dist/*
+lab2/dist/*
+*/*.DS_Store
 
