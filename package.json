@@ -1,5 +1,14 @@
 {
   "devDependencies": {
-    "@types/node": "^18.14.0"
+    "@types/node": "^18.14.0",
+    "@types/jest": "^29.4.2",
+    "ts-jest": "^29.0.5"
+  },
+  "scripts": {
+    "build": "tsc --build",
+    "clean": "tsc --build --clean",
+    "start-lab1": "node ./dist/lab1/main.js",
+    "start-lab2": " node ./dist/lab2/list.js",
+    "test": "jest"
   }
 }
