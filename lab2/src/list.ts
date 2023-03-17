@@ -1,4 +1,4 @@
-import { INode } from './lab2.types';
+import { IFoundNode, INode } from './lab2.types';
 import { ListNode } from './list-node';
 
 export class LinkedList {
@@ -7,7 +7,7 @@ export class LinkedList {
     private tail: INode | null = null
   ) {}
 
-  append(data: string) {
+  append(data: string): void {
     const newNode = new ListNode(data);
     let temp = this.head;
     if (!temp) {
@@ -22,9 +22,10 @@ export class LinkedList {
     temp.next = newNode;
     newNode.next = this.head;
     this.tail = newNode;
+    return;
   }
 
-  insert(idx: number, data: string) {
+  insert(idx: number, data: string): void {
     const newNode = new ListNode(data);
     if (idx > this.listSize() || idx < 0) {
       throw new Error('Invalid Input');
@@ -46,7 +47,7 @@ export class LinkedList {
     return;
   }
 
-  getByIndex(idx: number) {
+  getByIndex(idx: number): INode {
     let temp = this.head;
     if (idx > this.listSize() || idx < 0) {
       throw new Error('Invalid Input');
@@ -60,7 +61,7 @@ export class LinkedList {
     return temp;
   }
 
-  deleteByIndex(idx: number) {
+  deleteByIndex(idx: number): INode {
     let temp = this.head;
     let prevTemp: INode;
 
@@ -90,7 +91,7 @@ export class LinkedList {
     return temp;
   }
 
-  listSize() {
+  listSize(): number {
     let size = 0;
     let node = this.head;
 
@@ -103,7 +104,7 @@ export class LinkedList {
     return ++size;
   }
 
-  print() {
+  print(): void {
     let node = this.head;
 
     if (!node) return console.log('Empty List!');
@@ -117,7 +118,7 @@ export class LinkedList {
     return;
   }
 
-  deleteAll(data: string) {
+  deleteAll(data: string): void {
     let size = this.listSize();
 
     for (let i = 0; i < size; i++) {
@@ -131,7 +132,7 @@ export class LinkedList {
     return;
   }
 
-  clone() {
+  clone(): LinkedList {
     const newList = new LinkedList();
     let temp = this.head;
 
@@ -144,10 +145,10 @@ export class LinkedList {
     return newList;
   }
 
-  reverse() {
+  reverse(): void {
     let prevNode = this.tail;
     let currentNode = this.head;
-    let nextNode;
+    let nextNode: INode;
 
     if (!currentNode) {
       throw new Error('Can not reverse an empty list!');
@@ -164,41 +165,36 @@ export class LinkedList {
     this.tail = currentNode;
     return;
   }
-  findFirst(data: string) {
-    const size = this.listSize();
-    let result: any;
 
+  findFirst(data: string): IFoundNode {
+    const size = this.listSize();
     for (let i = 0; i < size; i++) {
       const node = this.getByIndex(i);
       if (node.data === data) {
-        result = { node, index: i };
-        break;
+        return { node, index: i };
       }
-      result = -1;
     }
-    return result;
+    return { index: -1 };
   }
 
-  findLast(data: string) {
+  findLast(data: string): IFoundNode {
     const size = this.listSize();
-    const matched: any[] = [];
-    for (let i = 0; i < size; i++) {
+    for (let i = size - 1; i >= 0; i--) {
       const node = this.getByIndex(i);
       if (node.data === data) {
-        matched.push({ node, index: i });
+        return { node, index: i };
       }
     }
-    const result = matched.pop() || -1;
-    return result;
+    return { index: -1 };
   }
 
-  clear() {
+  clear(): void {
     this.head = null;
     this.tail = null;
     return;
   }
 
-  extend(list: LinkedList) {
+  extend(list: LinkedList): void {
     let temp = list.head;
     while (temp.next !== list.head) {
       this.append(temp.data);
