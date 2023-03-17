@@ -8,7 +8,7 @@
     "build": "tsc --build",
     "clean": "tsc --build --clean",
     "start-lab1": "node ./dist/lab1/main.js",
-    "start-lab2": " node ./dist/lab2/list.js",
+    "start-lab2": " node ./dist/lab2/src/list.js",
     "test": "jest"
   }
 }
