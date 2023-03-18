@@ -18,7 +18,8 @@ Defining variant formula: number of variant % 4
 3. Install node_modules in root folder ```labs``` via ```npm i```
 5. Build all TypeScript files via ```npm run build```
 6. Run app via ```npm run start-lab2```
-7. Run ```npm run clean``` in root folder to delete build files
+7. Run test via ```npm run test```
+8. Run ```npm run clean``` in root folder to delete build files
 
 
 ### Commit with failed CI tests: [here](https://github.com/AidXylelele/labs/commit/a756ec7a7242fb03adb0a0579ecf3d9df3e555d8).
