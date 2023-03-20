@@ -3,7 +3,7 @@
 ## Linked list
 * [First implementation](https://github.com/AidXylelele/labs/commit/918e1d6c5206b32773b1aa79c38a5ad1be4fe720) is classic singly linked circular list.
 
-* [Second implementation]() of the linked list based on built-in arrays.
+* [Second implementation](https://github.com/AidXylelele/labs/commit/463e41eed61a1b5a7abea6994c36567fa064b0aa) of the linked list based on built-in arrays.
 
 ## Calculation of variant
 Defining variant formula: number of variant % 4
