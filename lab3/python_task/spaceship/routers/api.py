@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-
+import numpy as np
 router = APIRouter()
 
 
@@ -9,22 +9,15 @@ def hello_world() -> dict:
 
 @router.get('/matrix')
 def matrix() -> dict:
-    firstRows = 10
-    firstCol = 10
-    secondRows = 10
-    secondCol = 10
-    if firstCol != secondRows:
-        response = {
-            'result': 'Error!'
-        }
-    else:
-        first_matrix = numpy.random.rand(firstRows, firstCol)
-        second_matrix = numpy.random.rand(secondRows, secondCol)
-        result = numpy.dot(first_matrix, second_matrix)
-        response = {
-            "matrix_a": first_matrix.tolist(),
-            "matrix_b": second_matrix.tolist(),
-            "product": result.tolist()
-        }
+    a = np.random.rand(10, 10)
+    b = np.random.rand(10, 10)
+
+    result = np.dot(a, b)
+
+    response = {
+        "matrix_a": a.tolist(),
+        "matrix_b": b.tolist(),
+        "product": result.tolist()
+    }
 
     return response
